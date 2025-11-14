@@ -4,6 +4,7 @@ import { Section } from '@/components/Section';
 import type { Project } from '@/types/content';
 import { PROJECT_CATEGORY_LABELS, PROJECT_FILTERS } from '@/lib/projectCategories';
 import { motion } from 'framer-motion';
+import type { Route } from 'next';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import styles from './Projects.module.css';
@@ -94,7 +95,7 @@ function ProjectCard({ project, index }: CardProps) {
         ))}
       </div>
       <div className={styles.links}>
-        <Link href={project.detailUrl} className={styles.primaryLink}>
+        <Link href={project.detailUrl as Route} className={styles.primaryLink}>
           查看项目详情
         </Link>
         <div className={styles.secondaryLinks}>
