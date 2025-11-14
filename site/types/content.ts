@@ -1,5 +1,3 @@
-import type { Route } from 'next';
-
 export type ProjectCategory = 'frontend-ui' | 'cloud-release' | 'collab' | 'ai';
 
 export type ProjectDetailSections = {
@@ -25,7 +23,6 @@ export type Project = {
   highlights: string[];
   techStack: string[];
   repoUrl: string;
-  detailUrl: Route;
   demoUrl?: string;
   lastUpdated?: string;
   detail: ProjectDetailSections;

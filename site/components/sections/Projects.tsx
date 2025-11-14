@@ -95,7 +95,7 @@ function ProjectCard({ project, index }: CardProps) {
         ))}
       </div>
       <div className={styles.links}>
-        <Link href={project.detailUrl as Route} className={styles.primaryLink}>
+        <Link href={`/projects/${project.slug}` as Route} className={styles.primaryLink}>
           查看项目详情
         </Link>
         <div className={styles.secondaryLinks}>

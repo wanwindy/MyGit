@@ -1,5 +1,4 @@
 import type { Project } from '@/types/content';
-import type { Route } from 'next';
 
 export const projects: Project[] = [
   {
@@ -16,7 +15,6 @@ export const projects: Project[] = [
     ],
     techStack: ['Python', 'Claude API', 'asyncio', 'Cloudflare Workers', 'Docker'],
     repoUrl: 'https://github.com/wanwindy/AIAgent-Dev-Studio',
-    detailUrl: '/projects/aia-agent-dev-studio' as Route,
     lastUpdated: '2024-12',
     detail: {
       intro: '一个基于 Claude API 的多智能体自动化开发平台，让 AI 像“虚拟研发团队”一样完成需求分析、架构设计、代码生成、测试到审查的全流程协作。',
@@ -102,7 +100,6 @@ flowchart LR
     ],
     techStack: ['Python', 'Feishu API', 'Cloudflare Workers', 'KV Storage', 'Doubao LLM'],
     repoUrl: 'https://github.com/wanwindy/FeishuBot',
-    detailUrl: '/projects/feishu-bot' as Route,
     lastUpdated: '2024-10',
     detail: {
       intro: '一款自动生成日报／周报的飞书机器人，可收集群成员任务、分析评论、结构化输出团队周报，并支持飞书群内交互。',
