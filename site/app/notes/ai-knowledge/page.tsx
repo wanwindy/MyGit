@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
 import styles from './page.module.css';
@@ -94,9 +93,9 @@ export default function AIKnowledgeNotePage() {
           <section className={styles.section}>
             <h2>原始草稿下载</h2>
             <p>想要第一时间查看更新，可直接阅读仓库里的 Markdown 草稿。</p>
-            <Link className={styles.externalLink} href="/AIKnowledge.md" target="_blank">
+            <a className={styles.externalLink} href="/AIKnowledge.md" target="_blank" rel="noreferrer">
               打开 AIKnowledge.md
-            </Link>
+            </a>
           </section>
         </article>
       </main>
