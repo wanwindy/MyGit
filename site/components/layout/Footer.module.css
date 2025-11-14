@@ -1,0 +1,37 @@
+.footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 4rem min(6vw, 5rem) 3rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.title {
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  font-weight: 600;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.body {
+  max-width: 38ch;
+  color: var(--text-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.grid span {
+  padding: 0.5rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--border-soft) 60%, transparent);
+}

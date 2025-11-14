@@ -1,0 +1,107 @@
+.hero {
+  min-height: 75vh;
+  padding: clamp(3rem, 9vw, 6rem) min(6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 20ch;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.identity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.4);
+  width: fit-content;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.body {
+  max-width: 60ch;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ctas .button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ctas .button:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric {
+  padding: 1.1rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-soft);
+}
+
+.metric dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.metric dd {
+  font-size: 2rem;
+  margin: 0.25rem 0 0.35rem;
+  font-weight: 600;
+}
+
+.metric small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .identity {
+    flex-direction: column;
+    letter-spacing: 0.05em;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
