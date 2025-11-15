@@ -160,20 +160,67 @@
 
 .diagram {
   margin-top: 1rem;
-  background: rgba(0, 0, 0, 0.55);
-  color: #f5f5f5;
+  background: rgba(255, 255, 255, 0.92);
   padding: 1.25rem;
   border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   overflow-x: auto;
+}
+
+.diagram :global(svg) {
+  width: 100%;
+  height: auto;
+}
+
+.diagram pre {
+  margin-top: 0.6rem;
+  background: transparent;
+  color: var(--text-primary);
   font-size: 0.92rem;
   line-height: 1.6;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.diagram p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 .caption {
   margin-top: 0.5rem;
   color: var(--text-secondary);
   font-size: 0.9rem;
+}
+
+.achievementTitleRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.achievementTitleRow strong {
+  font-size: 1.05rem;
+}
+
+.achievementStatus {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.achievementDescription {
+  margin: 0.3rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.achievementNote {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 
 @media (max-width: 640px) {

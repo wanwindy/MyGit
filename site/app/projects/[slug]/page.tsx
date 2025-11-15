@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
+import { MermaidDiagram } from '@/components/MermaidDiagram';
 import { getProjectBySlug, projects } from '@/data/projects';
 import { PROJECT_CATEGORY_LABELS } from '@/lib/projectCategories';
 import styles from './page.module.css';
@@ -120,9 +121,9 @@ export default function ProjectDetailPage({ params }: PageProps) {
         <section className={styles.section}>
           <p className={styles.sectionLabel}>系统架构</p>
           <p className={styles.sectionBody}>{project.detail.architecture.description}</p>
-          <pre className={styles.diagram}>
-            <code>{project.detail.architecture.diagram.trim()}</code>
-          </pre>
+          <div className={styles.diagram}>
+            <MermaidDiagram chart={project.detail.architecture.diagram} />
+          </div>
           {project.detail.architecture.caption && (
             <p className={styles.caption}>{project.detail.architecture.caption}</p>
           )}
@@ -145,6 +146,24 @@ export default function ProjectDetailPage({ params }: PageProps) {
             ))}
           </ul>
         </section>
+
+        {project.detail.achievements && project.detail.achievements.length > 0 && (
+          <section className={styles.section}>
+            <p className={styles.sectionLabel}>项目成果</p>
+            <ul className={styles.list}>
+              {project.detail.achievements.map((item) => (
+                <li key={item.title}>
+                  <div className={styles.achievementTitleRow}>
+                    <strong>{item.title}</strong>
+                    <span className={styles.achievementStatus}>{item.status}</span>
+                  </div>
+                  <p className={styles.achievementDescription}>{item.description}</p>
+                  {item.note && <small className={styles.achievementNote}>{item.note}</small>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </main>
       <Footer />
     </>

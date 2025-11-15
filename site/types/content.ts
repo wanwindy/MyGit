@@ -11,6 +11,8 @@ export type ProjectDetailSections = {
   };
   useCases: string[];
   projectValue: string[];
+  achievements?: ProjectAchievement[];
+  insights?: ProjectInsight[];
 };
 
 export type Project = {
@@ -51,4 +53,20 @@ export type Metric = {
   value: number;
   suffix?: string;
   detail?: string;
+};
+
+export type ProjectAchievement = {
+  title: string;
+  status: string;
+  description: string;
+  note?: string;
+};
+
+export type ProjectInsight = {
+  id: string;
+  title: string;
+  problem: string;
+  solution: string;
+  techHighlights: string[];
+  impact?: string;
 };

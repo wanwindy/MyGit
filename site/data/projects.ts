@@ -2,6 +2,111 @@ import type { Project } from '@/types/content';
 
 export const projects: Project[] = [
   {
+    id: 'zhiyuai-platform',
+    slug: 'zhiyuai-platform',
+    emoji: '🌏',
+    title: 'ZhiYuAI 多模态翻译平台',
+    categories: ['ai', 'cloud-release'],
+    oneLiner: '将原本的单体翻译工具升级为语音 + 文本 + 场景协同的多引擎平台，演示与生产一键切换。',
+    highlights: [
+      'Starlette/Uvicorn 拆分语音、翻译、场景、AI 路由四大微服务，统一暴露 REST/WebSocket/SSE 接口',
+      'DashScope/Qwen + Mock 双模 SDK，自动路由最优模型并在无凭据时降级为本地示例',
+      'start_services.py/final_demo.py + Docker Compose 脚本一键拉起依赖，内存库与 PostgreSQL 自由切换',
+    ],
+    techStack: ['Python', 'Starlette', 'DashScope', 'OpenAI compatible API', 'PostgreSQL', 'Docker Compose', 'Vue 3', 'Flutter'],
+    repoUrl: 'https://github.com/wanwindy/ZhiYuAI',
+    lastUpdated: '2025-11',
+    detail: {
+      intro:
+        'ZhiYuAI 2.0 将翻译系统重构为语音交互、文本翻译、场景识别与 AI 路由四个 Starlette 微服务，配合共享的 DashScope/OpenAI 适配层、内存数据库与快速演示脚本，既能在 HR Demo 中一键跑全链路，也能按需对接真实的 PostgreSQL、Redis、监控栈。',
+      contributions: [
+        '重新划分 translation / voice-interaction / scene-recognition / ai-router 目录，封装统一 CORS、TLS、健康检查，保证服务组合时的接口一致性与部署弹性',
+        '实现 services/ai-router 的 LLM 驱动策略引擎，根据任务类型、优先级与实时指标挑选最优模型并在解析失败时自动回退',
+        '编写 shared/ai_clients，对 DashScope SDK 与 OpenAI 兼容接口进行统一封装，提供 Mock 模式、流式参数、语言/模型配置与熔断重试',
+        '在 shared/database 中实现内存数据库，配套 install_and_setup.py/test_database_integration.py，帮助离线演示也能跑完 CRUD + 指标链路',
+        '交付 start_services.py/final_demo.py 以及 docker-compose / Makefile，覆盖一键启停、健康检查、日志聚合与 PyInstaller 打包路径',
+      ],
+      techHighlights: [
+        '实时语音链路：voice-interaction 结合 DashScope ASR/TTS、VAD 与对话管理，支持 REST、SSE、WebSocket 多协议',
+        'LLM 驱动 AI Router：通过 chat_completion 汇总可用引擎能力、延迟、成本并输出 JSON 决策，失败时回落到规则表',
+        '视觉/对话协同：scene-recognition 服务融合摄像头内容与上下文对话，动态生成翻译语气、推荐模式与多语策略',
+        'Mock + 真实双模：shared/ai_clients 与 shared/database 允许缺失凭据时自动启用内存实现，确保训练/演示稳定性',
+        '多端入口：web/ 调试控制台与 mobile-app/Flutter 客户端共用 API 网关，方便将翻译流嵌入不同终端',
+      ],
+      architecture: {
+        description:
+          'start_services.py 负责按顺序拉起四个 Starlette 微服务，它们通过共享的 AI 适配层与内存/真实数据库交互，再由 Web 控制台、Flutter 客户端或命令行 Demo 访问 API 网关完成整条翻译链路。',
+        diagram: `
+flowchart LR
+    subgraph Clients
+        Web[Web Console]
+        Mobile[Flutter App]
+        Demo[final_demo.py]
+    end
+    subgraph Gateway
+        API[API Gateway / start_services]
+    end
+    subgraph Services
+        Voice[Voice Interaction]
+        Scene[Scene Recognition]
+        Translate[Translation]
+        Router[AI Router]
+    end
+    subgraph Shared
+        AI[DashScope / OpenAI Adapter]
+        DB[(Memory DB / PostgreSQL)]
+        MQ[(Redis / MQ)]
+    end
+
+    Web --> API
+    Mobile --> API
+    Demo --> Voice
+    API --> Voice
+    API --> Scene
+    API --> Translate
+    API --> Router
+    Voice --> Router
+    Scene --> Router
+    Router --> AI
+    Translate --> AI
+    Services --> DB
+    Services --> MQ
+        `,
+        caption: '四个 Starlette 微服务由一键脚本协调，并通过共享适配层访问 AI 能力与数据平面。',
+      },
+      useCases: [
+        'HR 演示与培训：使用 Mock 模式在无凭据环境跑完整的语音→翻译→播报体验',
+        '多语场景助手：场景识别服务根据环境标签推荐翻译模式，适合会议、出访等即时需求',
+        '工程评估：通过 Docker Compose/Makefile 快速复现实验环境，验证不同模型、数据库或监控管线',
+      ],
+      projectValue: [
+        '展示我在多模态 AI 平台上的架构拆分、接口治理与部署自动化能力',
+        '具备真实可运行资产：脚本、Mock、测试脚手架、移动/Web 客户端与文档齐全',
+        '易于扩展：AI Router、共享适配器与基础设施脚本都可以接入新的提供商或监控堆栈',
+      ],
+      achievements: [
+        {
+          title: '第七届全球校园人工智能算法精英大赛 · 省赛二等奖',
+          status: '已获奖',
+          description:
+            '基于 ZhiYuAI 的语音 / 场景 / 翻译协同链路，在省赛答辩中完整演示 DashScope AI Router + 实时 Demo，获得二等奖。',
+        },
+        {
+          title: '第七届全球校园人工智能算法精英大赛 · 国赛',
+          status: '进行中',
+          description:
+            '晋级国赛后继续迭代智能翻译 Agent，补充可观测性、Mock 降级与部署脚本，聚焦「可靠交付」场景准备最终答辩。',
+        },
+        {
+          title: '全国 RISC-V 高水平创新及应用大赛',
+          status: '进行中',
+          description:
+            '规划将语音模型裁剪到 RISC-V 边缘板卡上，并结合 Workers API 做远程推理调度，目前处于方案打磨与验证阶段。',
+        },
+      ],
+    },
+  },
+  {
     id: 'aia-agent-dev-studio',
     slug: 'aia-agent-dev-studio',
     emoji: '🧠',
