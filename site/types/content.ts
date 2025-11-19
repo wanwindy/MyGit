@@ -25,6 +25,7 @@ export type Project = {
   highlights: string[];
   techStack: string[];
   repoUrl: string;
+  repoLabel?: string;
   demoUrl?: string;
   lastUpdated?: string;
   detail: ProjectDetailSections;

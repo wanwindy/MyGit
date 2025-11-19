@@ -14,8 +14,8 @@
 }
 
 .backLink {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  width: fit-content;
 }
 
 .heroTitle {

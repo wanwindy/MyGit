@@ -39,13 +39,15 @@ export default function ProjectDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const repoCtaLabel = project.repoLabel ?? project.detail.achievements?.[0]?.status ?? '查看 GitHub';
+
   return (
     <>
       <Navbar />
       <main className={styles.main}>
         <section className={styles.hero}>
-          <Link href="/#projects" className={styles.backLink}>
-            ← 返回首页
+          <Link href="/#projects" className={`button button--ghost ${styles.backLink}`}>
+            返回首页
           </Link>
           <p className="eyebrow">项目详情</p>
           <h1 className={styles.heroTitle}>
@@ -85,7 +87,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
           </div>
           <div className={styles.actions}>
             <a href={project.repoUrl} target="_blank" rel="noreferrer" className={styles.actionPrimary}>
-              查看 GitHub
+              {repoCtaLabel}
             </a>
             {project.demoUrl && (
               <a href={project.demoUrl} target="_blank" rel="noreferrer" className={styles.actionSecondary}>

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Navbar.module.css';
 
@@ -73,7 +74,12 @@ export function Navbar() {
   };
 
   return (
-    <header className={styles.nav}>
+    <motion.header
+      className={styles.nav}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <a className={styles.brand} href="#top">
         <span className={styles.brandDot} />
         wanwindy · 我的项目作品集
@@ -123,6 +129,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

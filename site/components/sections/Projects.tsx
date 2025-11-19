@@ -100,7 +100,7 @@ function ProjectCard({ project, index }: CardProps) {
         </Link>
         <div className={styles.secondaryLinks}>
           <a href={project.repoUrl} target="_blank" rel="noreferrer">
-            GitHub
+            {project.repoLabel ?? 'GitHub'}
           </a>
           {project.demoUrl && (
             <a href={project.demoUrl} target="_blank" rel="noreferrer">
