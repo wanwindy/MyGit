@@ -15,11 +15,8 @@ export const projects: Project[] = [
     ],
     techStack: ['Python', 'Starlette', 'DashScope', 'OpenAI compatible API', 'PostgreSQL', 'Docker Compose', 'Vue 3', 'Flutter'],
     repoUrl: 'https://github.com/wanwindy/ZhiYuAI',
-<<<<<<< HEAD
+
     lastUpdated: '2025-10',
-=======
-    lastUpdated: '2025-11',
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
     detail: {
       intro:
         'ZhiYuAI 2.0 将翻译系统重构为语音交互、文本翻译、场景识别与 AI 路由四个 Starlette 微服务，配合共享的 DashScope/OpenAI 适配层、内存数据库与快速演示脚本，既能在 HR Demo 中一键跑全链路，也能按需对接真实的 PostgreSQL、Redis、监控栈。',
@@ -124,11 +121,8 @@ flowchart LR
     ],
     techStack: ['Python', 'Claude API', 'asyncio', 'Cloudflare Workers', 'Docker'],
     repoUrl: 'https://github.com/wanwindy/AIAgent-Dev-Studio',
-<<<<<<< HEAD
+
     lastUpdated: '2025-9',
-=======
-    lastUpdated: '2024-12',
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
     detail: {
       intro: '一个基于 Claude API 的多智能体自动化开发平台，让 AI 像“虚拟研发团队”一样完成需求分析、架构设计、代码生成、测试到审查的全流程协作。',
       contributions: [
@@ -213,11 +207,8 @@ flowchart LR
     ],
     techStack: ['Python', 'Feishu API', 'Cloudflare Workers', 'KV Storage', 'Doubao LLM'],
     repoUrl: 'https://github.com/wanwindy/FeishuBot',
-<<<<<<< HEAD
+
     lastUpdated: '2025-8',
-=======
-    lastUpdated: '2024-10',
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
     detail: {
       intro: '一款自动生成日报／周报的飞书机器人，可收集群成员任务、分析评论、结构化输出团队周报，并支持飞书群内交互。',
       contributions: [

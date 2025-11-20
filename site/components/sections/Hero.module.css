@@ -1,11 +1,6 @@
 .hero {
-<<<<<<< HEAD
   min-height: 78vh;
   padding: clamp(4.5rem, 10vw, 7.5rem) min(6vw, 5rem) 4rem;
-=======
-  min-height: 85vh;
-  padding: clamp(6rem, 12vw, 10rem) min(6vw, 5rem) 4rem;
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,11 +136,7 @@
 @media (max-width: 640px) {
   .hero {
     min-height: auto;
-<<<<<<< HEAD
     padding-top: 6.5rem;
-=======
-    padding-top: 8rem;
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
   }
 
   .identity {
@@ -162,8 +153,4 @@
   .metric {
     padding: 1.5rem;
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3

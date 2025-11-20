@@ -21,20 +21,12 @@ export const articles: Article[] = [
   },
   {
     id: 'design-system-portfolio',
-<<<<<<< HEAD
+
     title: 'ZhiYuAI：我的毕业设计实战复盘',
     summary: '复盘多模态翻译平台从 0 到 1 的全过程：微服务架构、AI 路由策略、Mock 降级方案、比赛答辩与工程化交付。',
     url: '/notes/design-system',
     publishedAt: '2024-03-12',
     minutes: 9,
     tags: ['毕业设计', 'AI 平台', '微服务'],
-=======
-    title: '把毕业设计提炼成 UI System',
-    summary: '记录如何把课程项目沉淀成 24 个 Token 化组件、Storybook 文档与指标看板，并用真实数据说服导师/HR。',
-    url: '/notes/design-system',
-    publishedAt: '2024-03-12',
-    minutes: 7,
-    tags: ['设计系统', '组件库'],
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
   },
 ];

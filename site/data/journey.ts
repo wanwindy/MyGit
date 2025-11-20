@@ -2,57 +2,35 @@ import type { Milestone } from '@/types/content';
 
 export const journeyTimeline: Milestone[] = [
   {
-<<<<<<< HEAD
-    title: '计算机科学与技术（本科）',
-    role: '云后端 / 云服务方向',
-    caption: 'GPA 3.66/4，专业前 5%，多次获得奖学金。聚焦分布式系统、云计算工程与 Java 程序设计。',
-    period: '2024 — 至今',
+    title: '\u8ba1\u7b97\u673a\u79d1\u5b66\u4e0e\u6280\u672f\uff08\u672c\u79d1\uff09',
+    role: '\u4e91\u540e\u7aef / \u4e91\u670d\u52a1\u65b9\u5411',
+    caption: 'GPA 3.66/4\uff0c\u4e13\u4e1a\u524d 5%\uff0c\u591a\u6b21\u83b7\u5f97\u5956\u5b66\u91d1\u3002\u805a\u7126\u5206\u5e03\u5f0f\u7cfb\u7edf\u3001\u4e91\u8ba1\u7b97\u5de5\u7a0b\u4e0e Java \u7a0b\u5e8f\u8bbe\u8ba1\u3002',
+    period: '2024 \u2014 \u81f3\u4eca',
     bullets: [
-      '将课程内容沉淀为组件库、自动化脚本、协同工具等工程化资产',
-      '专注分布式系统、云计算工程、Java 程序设计与数据库体系',
+      '\u5c06\u8bfe\u7a0b\u5185\u5bb9\u6c89\u6dc0\u4e3a\u7ec4\u4ef6\u5e93\u3001\u81ea\u52a8\u5316\u811a\u672c\u3001\u534f\u540c\u5de5\u5177\u7b49\u5de5\u7a0b\u5316\u8d44\u4ea7',
+      '\u4e13\u6ce8\u5206\u5e03\u5f0f\u7cfb\u7edf\u3001\u4e91\u8ba1\u7b97\u5de5\u7a0b\u3001Java \u7a0b\u5e8f\u8bbe\u8ba1\u4e0e\u6570\u636e\u5e93\u4f53\u7cfb',
     ],
   },
   {
-    title: 'Java 开发实习生 · 四川恒嘉数字科技有限公司',
-    role: '后端服务 + AI 相关模块',
-    caption: '负责后台管理系统、微信小程序等业务模块开发，参与 API 文档管理与代码风格优化。',
-    period: '2024.03 — 2024.06',
+    title: 'Java \u5f00\u53d1\u5b9e\u4e60\u751f \xb7 \u56db\u5ddd\u767e\u5609\u6570\u5b57\u79d1\u6280\u6709\u9650\u516c\u53f8',
+    role: '\u540e\u7aef\u670d\u52a1 + AI \u76f8\u5173\u6a21\u5757',
+    caption: '\u8d1f\u8d23\u540e\u53f0\u7ba1\u7406\u7cfb\u7edf\u3001\u5fae\u4fe1\u5c0f\u7a0b\u5e8f\u7b49\u4e1a\u52a1\u6a21\u5757\u5f00\u53d1\uff0c\u53c2\u4e0e API \u6587\u6863\u7ba1\u7406\u4e0e\u4ee3\u7801\u98ce\u683c\u4f18\u5316\u3002',
+    period: '2024.03 \u2014 2024.06',
     bullets: [
-      '独立完成配置与数据模块、文档编辑模块、逻辑模块等实现工作',
-      '参与 YApi / Apifox API 文档管理与维护，优化接口联调流程',
-      '负责代码风格统一、SQL 结构优化等工程实践',
+      '\u72ec\u7acb\u5b8c\u6210\u914d\u7f6e\u4e0e\u6570\u636e\u6a21\u5757\u3001\u6587\u6863\u7f16\u8f91\u6a21\u5757\u3001\u903b\u8f91\u6a21\u5757\u7b49\u5b9e\u73b0\u5de5\u4f5c',
+      '\u53c2\u4e0e YApi / Apifox API \u6587\u6863\u7ba1\u7406\u4e0e\u7ef4\u62a4\uff0c\u4f18\u5316\u63a5\u53e3\u8054\u8c03\u6d41\u7a0b',
+      '\u8d1f\u8d23\u4ee3\u7801\u98ce\u683c\u7edf\u4e00\u3001SQL \u7ed3\u6784\u4f18\u5316\u7b49\u5de5\u7a0b\u5b9e\u8df5',
     ],
   },
   {
-    title: 'ZhiYuAI 多模态翻译平台 · 毕业设计',
-    role: '全栈开发 / 架构设计',
-    caption: '第七届全球校园人工智能算法精英大赛省赛二等奖、国赛晋级，毕业答辩"优秀"评级。',
-    period: '2024.03 — 2024.12',
+    title: 'ZhiYuAI \u591a\u6a21\u6001\u7ffb\u8bd1\u5e73\u53f0 \xb7 \u6bd5\u4e1a\u8bbe\u8ba1',
+    role: '\u5168\u6808\u5f00\u53d1 / \u67b6\u6784\u8bbe\u8ba1',
+    caption: '\u7b2c\u4e03\u5c4a\u5168\u7403\u6821\u56ed\u4eba\u5de5\u667a\u80fd\u7b97\u6cd5\u7cbe\u82f1\u5927\u8d5b\u7701\u8d5b\u4e8c\u7b49\u5956\u3001\u56fd\u8d5b\u664b\u7ea7\uff0c\u6bd5\u4e1a\u7b54\u8fa9"\u4f18\u79c0"\u8bc4\u7ea7\u3002',
+    period: '2024.03 \u2014 2024.12',
     bullets: [
-      '设计并实现语音交互、场景识别、翻译、AI 路由四个微服务',
-      '封装 DashScope/OpenAI 适配层与 Mock 降级方案，确保演示稳定性',
-      '交付一键部署脚本、Docker Compose 与完整文档，复现成本极低',
+      '\u8bbe\u8ba1\u5e76\u5b9e\u73b0\u8bed\u97f3\u4ea4\u4e92\u3001\u573a\u666f\u8bc6\u522b\u3001\u7ffb\u8bd1\u3001AI \u8def\u7531\u56db\u4e2a\u5fae\u670d\u52a1',
+      '\u5c01\u88c5 DashScope/OpenAI \u9002\u914d\u5c42\u4e0e Mock \u964d\u7ea7\u65b9\u6848\uff0c\u786e\u4fdd\u6f14\u793a\u7a33\u5b9a\u6027',
+      '\u4ea4\u4ed8\u4e00\u952e\u90e8\u7f72\u811a\u672c\u3001Docker Compose \u4e0e\u5b8c\u6574\u6587\u6863\uff0c\u590d\u73b0\u6210\u672c\u6781\u4f4e',
     ],
-=======
-    title: '计算机科学与技术（大四）',
-    role: '云原生 / 前端方向',
-    caption: '聚焦分布式系统、云计算与前端工程化，GPA 排名前 10%。',
-    period: '2021 - 至今',
-    bullets: ['课程项目覆盖组件库、协同工具、低代码平台'],
-  },
-  {
-    title: '前端开发实习 · 云厂商',
-    role: '发布平台前端',
-    caption: '在云厂商实习 4 个月，负责灰度发布面板与边缘 API。',
-    period: '2023 年夏',
-    bullets: ['联调 Workers API，构建实时指标看板', '推动部署耗时降至 90 秒'],
-  },
-  {
-    title: 'ACM / 创新实验室',
-    role: '前端负责人',
-    caption: '校队成员，负责竞赛题解平台与训练管理。',
-    period: '2020 - 2022',
-    bullets: ['设计题解检索模块，维护 300+ 日活', '组织 15 场算法训练营'],
->>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
   },
 ];
