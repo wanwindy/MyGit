@@ -1,0 +1,64 @@
+:root {
+  color-scheme: light dark;
+  
+  /* Base Colors - Premium Minimalist */
+  --background: #ffffff;
+  --surface-primary: rgba(255, 255, 255, 0.85);
+  --surface-elevated: rgba(255, 255, 255, 0.95);
+  --surface-glass: rgba(255, 255, 255, 0.7);
+  --surface-pill: rgba(0, 0, 0, 0.04);
+  
+  /* Text Colors */
+  --text-primary: #111111;
+  --text-secondary: #444444;
+  --text-muted: #888888;
+  
+  /* Borders */
+  --border-strong: rgba(0, 0, 0, 0.12);
+  --border-soft: rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  
+  /* Accents - Refined Violet/Indigo */
+  --accent: #6366f1; /* Indigo 500 */
+  --accent-dark: #4f46e5;
+  --accent-soft: rgba(99, 102, 241, 0.1);
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.04);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.08);
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+  --blur-sm: blur(8px);
+  --blur-md: blur(16px);
+  
+  /* Animation */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050507;
+    --surface-primary: rgba(10, 10, 12, 0.85);
+    --surface-elevated: rgba(18, 18, 22, 0.95);
+    --surface-glass: rgba(10, 10, 12, 0.7);
+    --surface-pill: rgba(255, 255, 255, 0.06);
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    
+    --border-strong: rgba(255, 255, 255, 0.15);
+    --border-soft: rgba(255, 255, 255, 0.1);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    
+    --accent: #818cf8; /* Indigo 400 */
+    --accent-dark: #6366f1;
+    --accent-soft: rgba(129, 140, 248, 0.15);
+    
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+    --shadow-md: 0 8px 16px rgba(0,0,0,0.3);
+    --shadow-lg: 0 20px 40px rgba(0,0,0,0.4);
+    --shadow-glow: 0 0 50px rgba(129, 140, 248, 0.2);
+  }
+}

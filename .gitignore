@@ -1,0 +1,28 @@
+# Node / Vite artifacts
+node_modules
+.pnpm-store
+dist
+build
+.cache
+.next
+out
+.turbo
+.env
+.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/settings.json
+
+# Wrangler
+.wrangler
+workers/api/.wrangler

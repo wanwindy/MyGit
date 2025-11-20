@@ -1,0 +1,168 @@
+import type { Metadata } from 'next';
+import { Footer } from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar';
+import { MermaidDiagram } from '@/components/MermaidDiagram';
+import styles from './page.module.css';
+
+export const metadata: Metadata = {
+  title: 'ZhiYuAI：我的毕业设计实战复盘',
+  description:
+    '复盘 ZhiYuAI 多模态翻译平台从 0 到 1 的全过程：微服务架构、DashScope AI 路由、Mock 降级方案、省赛/国赛答辩与一键部署工程化交付。',
+};
+
+export default function DesignSystemNotePage() {
+  return (
+    <>
+      <Navbar />
+      <main className={styles.main}>
+        <article className={styles.article}>
+          <header className={styles.hero}>
+            <p className="eyebrow">笔记 · 毕业设计</p>
+            <h1>ZhiYuAI：我的毕业设计实战复盘</h1>
+            <p className={styles.description}>
+              这篇复盘讲述我如何将 ZhiYuAI 多模态翻译平台从课程原型升级为省赛二等奖、国赛晋级作品：从微服务拆分、AI 路由策略、Mock 降级，到一键部署脚本、答辩演示与工程化交付。
+              文章不仅展示架构设计，更强调真实可运行的工程资产与比赛复盘，让 HR 看到「说得清楚、跑得起来、拿得出手」的系统化能力。
+            </p>
+            <div className={styles.meta}>
+              <span>2024-03-12</span>
+              <span>预计阅读 9 分钟</span>
+              <span>4 个微服务 / 省赛二等奖</span>
+            </div>
+          </header>
+
+          <section className={styles.section}>
+            <h2>项目背景</h2>
+            <p>
+              ZhiYuAI 最初是我的《云计算与分布式系统》课程项目，目标是搭建一个简单的翻译工具。为了让它成为有说服力的毕业设计，我决定将其升级为多模态翻译平台：
+              整合语音交互、场景识别、多引擎翻译与 AI 路由四大能力，并确保可以在无 AI 凭据的环境（如答辩现场）稳定运行。
+            </p>
+            <ul className={styles.list}>
+              <li>目标对象：毕业答辩评委 + 算法大赛评审 + 求职面试官。</li>
+              <li>交付内容：微服务架构、DashScope/OpenAI 适配层、Mock 降级、一键部署脚本、Web/Flutter 客户端。</li>
+              <li>衡量方式：比赛成绩、演示稳定性、代码可复现性、导师评分。</li>
+            </ul>
+          </section>
+
+          <section className={styles.section}>
+            <h2>架构设计</h2>
+            <p>我将系统拆分为 4 个独立的 Starlette 微服务，通过共享的 AI 适配层与数据平面协同工作：</p>
+            <MermaidDiagram
+              chart={`
+flowchart LR
+    subgraph Clients
+        Web[Web Console]
+        Mobile[Flutter App]
+        Demo[final_demo.py]
+    end
+    subgraph Gateway
+        API[API Gateway / start_services]
+    end
+    subgraph Services
+        Voice[Voice Interaction]
+        Scene[Scene Recognition]
+        Translate[Translation]
+        Router[AI Router]
+    end
+    subgraph Shared
+        AI[DashScope / OpenAI Adapter]
+        DB[(Memory DB / PostgreSQL)]
+        MQ[(Redis / MQ)]
+    end
+
+    Web --> API
+    Mobile --> API
+    Demo --> Voice
+    API --> Voice
+    API --> Scene
+    API --> Translate
+    API --> Router
+    Voice --> Router
+    Scene --> Router
+    Router --> AI
+    Translate --> AI
+    Services --> DB
+    Services --> MQ
+              `}
+            />
+            <p>
+              四个服务由 <code>start_services.py</code> 一键启动，并通过共享适配层访问 DashScope 或 Mock 实现，确保演示与生产环境都可以顺畅运行。
+            </p>
+          </section>
+
+          <section className={styles.section}>
+            <h2>关键技术与亮点</h2>
+            <div className={styles.grid}>
+              <div className={styles.card}>
+                <h3>01 · 微服务架构</h3>
+                <p>语音交互、场景识别、翻译、AI 路由四个服务独立部署，统一暴露 REST/WebSocket/SSE 接口。</p>
+              </div>
+              <div className={styles.card}>
+                <h3>02 · AI 路由策略</h3>
+                <p>通过 LLM 驱动的策略引擎，根据任务类型、优先级与实时指标挑选最优模型并自动回退。</p>
+              </div>
+              <div className={styles.card}>
+                <h3>03 · Mock 降级方案</h3>
+                <p>当缺失 AI 凭据时自动启用内存数据库与本地示例，确保答辩演示与培训场景稳定性。</p>
+              </div>
+              <div className={styles.card}>
+                <h3>04 · 一键部署脚本</h3>
+                <p><code>start_services.py</code> + Docker Compose 覆盖健康检查、日志聚合与依赖拉起，方便快速复现。</p>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2>比赛成果与答辩</h2>
+            <div className={styles.grid}>
+              <div className={styles.card}>
+                <h3>省赛二等奖</h3>
+                <p>第七届全球校园人工智能算法精英大赛省赛，完整演示语音/场景/翻译协同链路。</p>
+              </div>
+              <div className={styles.card}>
+                <h3>国赛晋级</h3>
+                <p>晋级国赛后继续迭代可观测性、Mock 降级与部署脚本，聚焦「可靠交付」场景。</p>
+              </div>
+              <div className={styles.card}>
+                <h3>演示稳定性</h3>
+                <p>使用 Mock 模式在无凭据环境跑完整链路，答辩现场零失败。</p>
+              </div>
+              <div className={styles.card}>
+                <h3>导师评价</h3>
+                <p>毕业答辩获得"优秀"评级，导师认可架构设计与工程化交付能力。</p>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2>反思与可复制经验</h2>
+            <ul className={styles.list}>
+              <li>微服务拆分要考虑演示场景：独立服务可以单独启动验证，降低答辩时的依赖风险。</li>
+              <li>Mock 降级是真实需求：AI 凭据在答辩/培训场景往往不可用，内存实现能保证流程完整性。</li>
+              <li>一键脚本 + Docker Compose 让复现成本极低，评审老师可以快速跑起来验证。</li>
+              <li>数据驱动的答辩材料（比赛成绩、服务指标、架构图）比单纯讲技术更有说服力。</li>
+            </ul>
+          </section>
+
+          <section className={styles.section}>
+            <h2>可用资产</h2>
+            <ul className={styles.assetList}>
+              <li>
+                <strong>GitHub 仓库</strong>
+                <span>完整的微服务代码、脚本与 Docker Compose 配置，可直接 clone 运行。</span>
+              </li>
+              <li>
+                <strong>演示脚本</strong>
+                <span><code>final_demo.py</code> 提供语音→翻译→播报全链路演示，适合答辩与面试。</span>
+              </li>
+              <li>
+                <strong>架构文档</strong>
+                <span>包含 Mermaid 架构图、API 文档与部署指南，面试时用于讲解设计思路。</span>
+              </li>
+            </ul>
+          </section>
+        </article>
+      </main>
+      <Footer />
+    </>
+  );
+}
