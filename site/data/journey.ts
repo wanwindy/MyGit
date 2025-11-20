@@ -2,6 +2,7 @@ import type { Milestone } from '@/types/content';
 
 export const journeyTimeline: Milestone[] = [
   {
+<<<<<<< HEAD
     title: '计算机科学与技术（本科）',
     role: '云后端 / 云服务方向',
     caption: 'GPA 3.66/4，专业前 5%，多次获得奖学金。聚焦分布式系统、云计算工程与 Java 程序设计。',
@@ -32,5 +33,26 @@ export const journeyTimeline: Milestone[] = [
       '封装 DashScope/OpenAI 适配层与 Mock 降级方案，确保演示稳定性',
       '交付一键部署脚本、Docker Compose 与完整文档，复现成本极低',
     ],
+=======
+    title: '计算机科学与技术（大四）',
+    role: '云原生 / 前端方向',
+    caption: '聚焦分布式系统、云计算与前端工程化，GPA 排名前 10%。',
+    period: '2021 - 至今',
+    bullets: ['课程项目覆盖组件库、协同工具、低代码平台'],
+  },
+  {
+    title: '前端开发实习 · 云厂商',
+    role: '发布平台前端',
+    caption: '在云厂商实习 4 个月，负责灰度发布面板与边缘 API。',
+    period: '2023 年夏',
+    bullets: ['联调 Workers API，构建实时指标看板', '推动部署耗时降至 90 秒'],
+  },
+  {
+    title: 'ACM / 创新实验室',
+    role: '前端负责人',
+    caption: '校队成员，负责竞赛题解平台与训练管理。',
+    period: '2020 - 2022',
+    bullets: ['设计题解检索模块，维护 300+ 日活', '组织 15 场算法训练营'],
+>>>>>>> f13c5949c6902215c56a307f6e2c0e07c1ea66a3
   },
 ];
